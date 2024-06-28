@@ -1,0 +1,292 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- the below line indicates the animation.io web's animation library -->
+    <link rel="stylesheet" href="{% static 'animationio/cssanimation.css' %}">
+
+    <link rel="stylesheet" href="{% static 'animationio/cssanimation.min.css' %}">
+
+    <!-- the below line indicates the animation while scrolling (aos) web's animation library -->
+
+    <link rel="stylesheet" href="{% static 'aos/aos.css' %}">
+
+
+    <!-- the below line indicates the bootstraps grid system library -->
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!-- the below line indicates the text animation while hovering library -->
+
+    <link rel="stylesheet" href="{% static 'hover/hover-min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'hover/hover.css' %}">
+
+    <!-- the below line indicates the image animation while hovering library -->
+
+    <link rel="stylesheet" href="{% static 'imagehover/imagehover.css' %}">
+
+    <link rel="stylesheet" href="{% static 'imagehover/imagehover.min.css' %}">
+
+    <!-- this is to animate_animated -->
+    <link rel="stylesheet" href="{% static 'animatecss/animate.min.css' %}">
+
+
+    <!-- this below place is for javascript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'animationio/letteranimation.js' %}"></script>
+
+    <script src="{% static 'animationio/letteranimation.min.js' %}"></script>
+
+    <script src="{% static 'aos/aos.js' %}"></script>
+
+    <script src="../aos/aos.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("../images/bg1-grey.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 30%;
+            min-width: 350px;
+            background-color: transparent;
+            backdrop-filter: blur(9px);
+            -webkit-backdrop-filter: blur(9px);
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .title {
+            font-size: 28px;
+            color: black;
+            font-weight: 600;
+            letter-spacing: -1px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+        }
+
+        .title::before,
+        .title::after {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            left: 0px;
+            background-color: black;
+        }
+
+        .title::before {
+            width: 18px;
+            height: 18px;
+            background-color: black;
+        }
+
+        .title::after {
+            width: 18px;
+            height: 18px;
+            animation: pulse 1s linear infinite;
+        }
+
+        .message,
+        .signin {
+            /*  color: rgba(88, 87, 87, 0.822); */
+            color: black;
+            font-size: 14px;
+        }
+
+        .signin {
+            text-align: center;
+        }
+
+        .signin a {
+            color: royalblue;
+        }
+
+        .signin a:hover {
+            text-decoration: underline royalblue;
+        }
+
+        .flex {
+            display: flex;
+            width: 100%;
+            gap: 6px;
+        }
+
+        .form label {
+            position: relative;
+        }
+
+        .form label .input {
+            width: 100%;
+            padding: 10px 10px 20px 10px;
+            outline: 0;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        .form label .input+span {
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            color: grey;
+            font-size: 0.9em;
+            cursor: text;
+            transition: 0.3s ease;
+        }
+
+        .form label .input:placeholder-shown+span {
+            top: 15px;
+            font-size: 0.9em;
+            color: black;
+        }
+
+        .form label .input:focus+span,
+        .form label .input:valid+span {
+            top: 30px;
+            font-size: 0.7em;
+            font-weight: 600;
+        }
+
+        .form label .input:valid+span {
+            color: green;
+        }
+
+        .submit {
+            border: 2px solid black;
+            transition: .3s ease;
+            outline: none;
+            background-color: black;
+            padding: 10px;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            transform: .3s ease;
+        }
+
+        .submit:hover {
+            background-color: rgb(43, 43, 43);
+            border: 2px solid black;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .flex-row>div>label {
+            font-size: 14px;
+            color: black;
+            font-weight: 400;
+        }
+
+        .btn {
+            margin-top: 10px;
+            width: 100%;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 500;
+            gap: 10px;
+            border: 1px solid #ededef;
+            background-color: transparent;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+        }
+
+        .btn:hover {
+            border: 1px solid black;
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(0.9);
+                opacity: 1;
+            }
+
+            to {
+                transform: scale(1.8);
+                opacity: 0;
+            }
+        }
+
+        .flex-row {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- your code goes here -->
+
+    <form class="form" method="get">
+        <!-- {% csrf_token %} -->
+        <p class="title">Book Now </p>
+        <div class="flex">
+            <label>
+                <p class="message">From</p><input required="" placeholder="" type="date" class="input"
+                    name="from">
+                <!-- <span>From</span> -->
+            </label>
+
+            <label>
+                <p class="message">To</p>
+                <input required="" placeholder="" type="date" class="input" name="to">
+                <!-- <span>To</span> -->
+            </label>
+        </div>
+        <label>
+            <input required="" placeholder="" type="number" class="input" name="No_of_persons">
+            <span>No of persons</span>
+        </label>
+        <label>
+            <input required="" placeholder="" type="number" class="input" name="no_of_days">
+            <span>No of Days</span>
+        </label>
+        <label>
+            <p>Specify Your Queries</p>
+            <textarea cols="30" class="input" name="queries"></textarea>
+        </label>
+        <p>{{error}}</p>
+        <input type="submit" value="Submit" class="submit">
+    </form>
+
+
+
+
+
+
+    <!-- your code ends here -->
+    <script>       AOS.init();    </script>
+</body>
+
+</html>
