@@ -8,7 +8,6 @@ Welcome to the Room Rental Platform project! This Django-based web application a
 - **Room Listings:** House owners can list their rooms with detailed descriptions, photos, and availability.
 - **Search and Filter:** Customers can search for rooms and filter results by location, price, and amenities.
 - **Booking System:** Customers can book rooms, and house owners can manage bookings.
-- **Payment Integration:** Secure payment processing for reservations.
 - **Ratings and Reviews:** Customers can leave feedback on their stay.
 - **Notifications:** Email or SMS notifications for booking confirmations and updates.
 - **Admin Dashboard:** Manage users, room listings, and bookings through an admin interface.
@@ -18,8 +17,7 @@ Welcome to the Room Rental Platform project! This Django-based web application a
 ### Prerequisites
 
 - Python 3.8 or higher
-- Django 4.x
-- A payment gateway account (e.g., Stripe, PayPal) for payment integration
+- Django 4.0 or higher
 
 ### Steps
 
